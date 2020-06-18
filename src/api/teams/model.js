@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const team = new Schema({
-  stats: { type: mongoose.SchemaTypes.Mixed, required: true },
+  stats: { type: mongoose.SchemaTypes.Mixed, required: false },
   stat: { type: String, required: true },
   link: { type: String, required: true },
   logo: { type: String, required: true },

@@ -7,17 +7,20 @@ const base = 'https://www.pesmaster.com'
 exports.crawAllPlayers = async (req, res) => {
   const teams = await teamsRepository.getAllTeams()
   const allPlayers = []
-  const getPlayer = async (team) => {
-    const teamPage = await fetchData(team.link)
+  const getPlayer = (link, _id) => async () => {
+    const teamPage = await fetchData(link)
+    if (!(teamPage && teamPage.data)) {
+      return Promise.resolve()
+    }
     const $ = cheerio.load(teamPage.data)
-    const players = $('#search-result-table tbody tr')
+    const players = $('#search-result-table').eq(0).find('tbody tr')
     const statsBlocks = $('.stat-donut-block')
     const stats = {
       attack: statsBlocks.eq(3).find('.stat').text(),
       defence: statsBlocks.eq(1).find('.stat').text(),
       midfield: statsBlocks.eq(2).find('.stat').text()
     }
-    await teamsRepository.updateTeamById(team._id, { stats })
+    await teamsRepository.updateTeamById(_id, { stats })
     const playersInTeam = []
     players.each(function () {
       const stats = $(this).find('.squad-table-stat')
@@ -49,7 +52,7 @@ exports.crawAllPlayers = async (req, res) => {
         height,
         position,
         code,
-        teamId: team._id,
+        teamId: _id,
         id
       }
       playersInTeam.push(player)
@@ -61,15 +64,15 @@ exports.crawAllPlayers = async (req, res) => {
   const limit = 5
   let promises = []
   for (let i = 0; i < teams.length; i++) {
-    console.log(i && ((i / teams.length) * 100) + '%')
+    console.log(i && ((i / teams.length) * 100).toPrecision(2) + '%')
     const team = teams[i]
-    promises.push(getPlayer(team))
+    promises.push(getPlayer(team.link, team._id))
     if (promises.length === limit || i === teams.length - 1) {
-      await Promise.all(promises)
+      await Promise.all(promises.map(promise => promise()))
       promises = []
     }
   }
-  res.json({ sussess: 'Done' })
+  res.json({ sussess: true })
 }
 
 exports.allPlayersInTeam = async (req, res) => {

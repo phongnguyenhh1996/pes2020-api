@@ -38,7 +38,7 @@ const config = {
   test: { },
   development: {
     mongo: {
-      uri: 'mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb',
+      uri: 'mongodb+srv://phong:123@cluster0.6ny08.mongodb.net/pes2020?retryWrites=true&w=majority',
       options: {
         debug: true
       }
