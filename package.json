@@ -11,8 +11,8 @@
     "dev": "nodemon -i \"*.test.js\" .",
     "prod": "cross-env NODE_ENV=production nodemon -i \"*.test.js\" -r dotenv-safe/config .",
     "lint": "eslint src",
-    "docs": "apidoc -i src -o docs && apidoc-markdown -p docs -o DOCS.md",
-    "postdocs": "open-cli docs/index.html"
+    "docs": "apidoc -e '(node_modules|public)' -i src -o public/apidoc && apidoc-markdown -p public/apidoc -o DOCS.md",
+    "postdocs": "open-cli http://localhost:9000/apidoc/"
   },
   "jest": {
     "testEnvironment": "node",
