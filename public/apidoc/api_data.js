@@ -73,7 +73,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "HTTP/1.1 200 OK\n[\n    {\n      \"_id\": \"5eeb10e1cd8b5734f90d082f\",\n      \"stat\": \"67\",\n      \"name\": \"Aab\",\n      \"logo\": \"https://www.pesmaster.com/pes-2020/graphics/teamlogos/e_001818.png?w=36\",\n      \"link\": \"https://www.pesmaster.com/aab/pes-2020/team/1818/\",\n      \"code\": \"aab\",\n      \"leagueId\": \"5eeb0d9b84b5ac340b21de99\",\n      \"__v\": 0,\n      \"stats\": {\n          \"attack\": \"66\",\n          \"defence\": \"66\",\n          \"midfield\": \"69\"\n    },\n  ]",
+          "content": "HTTP/1.1 200 OK\n[\n    {\n      \"_id\": \"5eeb10e1cd8b5734f90d082f\",\n      \"stat\": \"67\",\n      \"name\": \"Aab\",\n      \"logo\": \"https://www.pesmaster.com/pes-2020/graphics/teamlogos/e_001818.png?w=36\",\n      \"link\": \"https://www.pesmaster.com/aab/pes-2020/team/1818/\",\n      \"code\": \"aab\",\n      \"leagueId\": \"5eeb0d9b84b5ac340b21de99\",\n      \"__v\": 0,\n      \"stats\": {\n          \"attack\": \"66\",\n          \"defence\": \"66\",\n          \"midfield\": \"69\"\n      }\n    }\n  ]",
           "type": "json"
         }
       ]

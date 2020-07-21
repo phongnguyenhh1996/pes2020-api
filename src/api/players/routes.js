@@ -6,6 +6,7 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/crawAllPlayers', controller.crawAllPlayers)
+router.get('/crawAllDetailPlayers', controller.crawAllDetailPlayers)
 
 /**
  * @api {get} /players/allPlayersInTeam Get all Players in Team

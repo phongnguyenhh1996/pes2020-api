@@ -128,7 +128,8 @@ HTTP/1.1 200 OK
           "attack": "66",
           "defence": "66",
           "midfield": "69"
-    },
+      }
+    }
   ]
 ```
 

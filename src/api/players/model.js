@@ -12,7 +12,8 @@ const player = new Schema({
   name: { type: String, required: true },
   position: { type: String, required: true },
   stats: { type: mongoose.SchemaTypes.Mixed, required: true },
-  teamId: { type: mongoose.SchemaTypes.ObjectId, required: true }
+  teamId: { type: mongoose.SchemaTypes.ObjectId, required: true },
+  playerDetail: { type: mongoose.SchemaTypes.Mixed, required: false }
 })
 
 module.exports = mongoose.model('Player', player)

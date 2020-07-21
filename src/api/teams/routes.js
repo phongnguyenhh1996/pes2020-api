@@ -28,7 +28,8 @@ router.get('/crawAllTeams', controller.crawAllTeams)
               "attack": "66",
               "defence": "66",
               "midfield": "69"
-        },
+          }
+        }
       ]
  */
 router.get('/allTeamsInLeague', controller.allTeamsInLeague)
