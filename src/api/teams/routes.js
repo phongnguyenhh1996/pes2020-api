@@ -33,5 +33,6 @@ router.get('/crawAllTeams', controller.crawAllTeams)
       ]
  */
 router.get('/allTeamsInLeague', controller.allTeamsInLeague)
+router.get('/getListTeam', controller.getListTeam)
 
 module.exports = router

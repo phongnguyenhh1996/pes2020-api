@@ -18,9 +18,14 @@ const getAllteamsByLeagueId = (leagueId) => {
   return Team.find({ leagueId }).exec()
 }
 
+const getTeamsByStat = (stat) => {
+  return Team.find({stat: {$gte: stat}})
+}
+
 module.exports = {
   saveAllTeams,
   getAllTeams,
   updateTeamById,
-  getAllteamsByLeagueId
+  getAllteamsByLeagueId,
+  getTeamsByStat
 }

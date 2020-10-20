@@ -51,3 +51,11 @@ exports.allTeamsInLeague = async (req, res) => {
   const teams = await repository.getAllteamsByLeagueId(req.query.leagueId)
   return res.status(200).json(teams)
 }
+
+exports.getListTeam = async (req, res) => {
+  if (!req.query.stat) {
+    return res.status(403).json({ error: 'Must provide stat query parameter' })
+  }
+  const teams = await repository.getTeamsByStat(req.query.stat)
+  return res.status(200).json({teams: teams, length: teams.length})
+}
