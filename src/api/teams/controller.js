@@ -57,5 +57,5 @@ exports.getListTeam = async (req, res) => {
     return res.status(403).json({ error: 'Must provide stat query parameter' })
   }
   const teams = await repository.getTeamsByStat(req.query.stat)
-  return res.status(200).json({teams: teams, length: teams.length})
+  return res.status(200).json(teams)
 }
