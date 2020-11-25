@@ -14,7 +14,7 @@ exports.crawAllTeams = async (req, res) => {
     statsTeam.each(function () {
       const stat = $(this).find('.stat').text()
       const name = $(this).find('.team-block-name').text()
-      const logo = $(this).find('.team-block-logo').attr('src')
+      const logo = $(this).find('.team-block-logo').attr('data-src')
       const link = $(this).find('a').attr('href')
       const code = link.split('/')[1]
       const team = {

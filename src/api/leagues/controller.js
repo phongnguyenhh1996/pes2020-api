@@ -4,7 +4,7 @@ const fetchData = require('../../utils/fetchData')
 const base = 'https://www.pesmaster.com'
 
 exports.crawAllLeagues = async (req, res) => {
-  const crawUrl = 'https://www.pesmaster.com/pes-2020/#leagues'
+  const crawUrl = 'https://www.pesmaster.com/pes-2021/#leagues'
   const leagues = []
   fetchData(crawUrl).then((res) => {
     const html = res.data
@@ -12,7 +12,7 @@ exports.crawAllLeagues = async (req, res) => {
     const statsTable = $('#leagues + .team-block-container .team-block')
     statsTable.each(function () {
       const title = $(this).find('.team-block-name').text()
-      const logo = $(this).find('.team-block-logo').attr('src')
+      const logo = $(this).find('.team-block-logo').attr('data-src')
       const link = $(this).find('a').attr('href')
       const code = link.split('/')[1]
       const league = {

@@ -38,7 +38,7 @@ const config = {
   test: { },
   development: {
     mongo: {
-      uri: 'mongodb+srv://phong:123@cluster0.6ny08.mongodb.net/pes2020?retryWrites=true&w=majority',
+      uri: 'mongodb+srv://phong:123@cluster0.6ny08.mongodb.net/pes2021?retryWrites=true&w=majority',
       options: {
         debug: true
       }

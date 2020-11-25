@@ -34,9 +34,9 @@ exports.crawAllPlayers = async (req, res) => {
         dri: stats.eq(6).text()
       }
       const name = $(this).find('.namelink').text()
-      const logo = $(this).find('.player_head').attr('src')
+      const logo = $(this).find('.player_head').attr('data-src')
       const link = $(this).find('.namelink').attr('href')
-      const country = $(this).find('.country-flag').attr('src')
+      const country = $(this).find('.country-flag').attr('data-src')
       const age = $(this).find('.squad-table-age').text()
       const height = $(this).find('.squad-table-height').text()
       const position = $(this).find('.squad-table-pos').text()
